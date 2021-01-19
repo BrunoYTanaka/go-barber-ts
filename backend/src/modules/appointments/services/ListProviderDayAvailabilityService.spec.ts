@@ -1,14 +1,14 @@
 import 'reflect-metadata'
-import ListProviderDayAvailability from './ListProviderDayAvailability'
+import ListProviderDayAvailabilityService from './ListProviderDayAvailabilityService'
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository'
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository
-let listProviderDayAvailability: ListProviderDayAvailability
+let listProviderDayAvailability: ListProviderDayAvailabilityService
 
 describe('ListProviderDayAvailability', () => {
     beforeEach(() => {
         fakeAppointmentsRepository = new FakeAppointmentsRepository()
-        listProviderDayAvailability = new ListProviderDayAvailability(
+        listProviderDayAvailability = new ListProviderDayAvailabilityService(
             fakeAppointmentsRepository,
         )
     })
