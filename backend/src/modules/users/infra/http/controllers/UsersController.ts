@@ -1,6 +1,7 @@
 import CreateUserService from '@modules/users/services/CreateUserService'
 import { Response, Request } from 'express'
 import { container } from 'tsyringe'
+import { classToClass } from 'class-transformer'
 
 class UsersController {
     public async create(
@@ -13,15 +14,7 @@ class UsersController {
 
         const user = await createUser.execute({ name, email, password })
 
-        const userWithoutPassword = {
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            created_at: user.created_at,
-            updated_at: user.updated_at,
-        }
-
-        return response.json(userWithoutPassword)
+        return response.json(classToClass(user))
     }
 }
 
