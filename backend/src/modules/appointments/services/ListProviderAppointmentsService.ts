@@ -29,7 +29,6 @@ class ListProviderAppointmentsService {
         let appointments = await this.chaceProvider.recover<Appointment[]>(
             cachekey,
         )
-        console.log(appointments)
         if (!appointments) {
             appointments = await this.appointmentRepository.findAllInDayFromProvider(
                 {
