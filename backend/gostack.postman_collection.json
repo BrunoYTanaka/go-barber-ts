@@ -427,12 +427,7 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Availability",
-			"item": [
+				},
 				{
 					"name": "Month Availability",
 					"request": {
