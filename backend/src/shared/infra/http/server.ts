@@ -13,11 +13,11 @@ import '@shared/container'
 import rateLimiter from './middlewares/rateLimiter'
 
 const app = express()
-app.use(rateLimiter)
 app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
 app.use('/files', express.static(uploadConfig.uploadsFolder))
+app.use(rateLimiter)
 app.use(routes)
 app.use(errors())
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
