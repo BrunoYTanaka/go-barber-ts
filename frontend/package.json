@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "0.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -12,7 +13,9 @@
     "@types/react-dom": "^16.9.8",
     "@unform/core": "^2.1.3",
     "@unform/web": "^2.1.3",
+    "D": "^1.0.0",
     "axios": "^0.21.0",
+    "axios-mock-adapter": "^1.19.0",
     "date-fns": "^2.16.1",
     "polished": "^4.0.5",
     "react": "^17.0.1",
@@ -32,7 +35,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage":"react-scripts test --coverage --watchAll false",
+    "test:coverage": "react-scripts test --coverage --watchAll false",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -47,8 +50,8 @@
       "last 1 safari version"
     ]
   },
-  "jest":{
-    "collectCoverageFrom":[
+  "jest": {
+    "collectCoverageFrom": [
       "src/pages/**/*.tsx",
       "src/components/**/*.tsx",
       "src/hooks/**/*.tsx",
@@ -56,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^5.0.3",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
     "@types/uuid": "^8.3.0",

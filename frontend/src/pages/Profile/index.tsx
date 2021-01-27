@@ -142,7 +142,12 @@ const Profile: React.FC = () => {
             <img src={user.avatar_url} alt={user.name} />
             <label htmlFor="avatar">
               <FiCamera size={16} />
-              <input type="file" id="avatar" onChange={handleAvatarChange} />
+              <input
+                type="file"
+                id="avatar"
+                onChange={handleAvatarChange}
+                data-testid="avatar-input"
+              />
             </label>
           </AvatarInput>
           <h1>Meu perfil</h1>
@@ -165,7 +170,7 @@ const Profile: React.FC = () => {
             icon={FiLock}
             name="password_confirmation"
             type="password"
-            placeholder="Confirmar Senha"
+            placeholder="Confirmar senha"
           />
           <Button type="submit">Confirmar mudanças</Button>
         </Form>

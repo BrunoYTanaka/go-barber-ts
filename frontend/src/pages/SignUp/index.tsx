@@ -37,7 +37,9 @@ const SignUp: React.FC = () => {
         await schema.validate(data, {
           abortEarly: false,
         })
+
         await api.post('/users', data)
+
         addToast({
           type: 'success',
           title: 'Cadastro realizado!',

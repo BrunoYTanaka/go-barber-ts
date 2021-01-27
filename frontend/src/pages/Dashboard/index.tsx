@@ -41,6 +41,7 @@ const Dashboard: React.FC = () => {
 
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [currentMonth, setCurrentMonth] = useState(new Date())
+
   const [monthAvailability, setMonthAvailability] = useState<
     MonthAvailabilityItem[]
   >([])
@@ -214,7 +215,7 @@ const Dashboard: React.FC = () => {
             ))}
           </Section>
         </Schedule>
-        <Calendar>
+        {/* <Calendar>
           <DayPicker
             fromMonth={new Date()}
             disabledDays={[
@@ -245,7 +246,7 @@ const Dashboard: React.FC = () => {
               'Dezembro',
             ]}
           />
-        </Calendar>
+        </Calendar> */}
       </Content>
     </Container>
   )
