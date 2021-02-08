@@ -10,6 +10,7 @@ export interface ToastMessage {
 }
 
 interface ToastContextData {
+  messages: ToastMessage[]
   addToast(message: Omit<ToastMessage, 'id'>): void
   removeToast(id: string): void
 }
@@ -38,7 +39,7 @@ const ToastProvider: React.FC = ({ children }) => {
   }, [])
 
   return (
-    <ToastContext.Provider value={{ removeToast, addToast }}>
+    <ToastContext.Provider value={{ messages, removeToast, addToast }}>
       {children}
       <ToastContainer messages={messages} />
     </ToastContext.Provider>
@@ -47,10 +48,6 @@ const ToastProvider: React.FC = ({ children }) => {
 
 function useToast(): ToastContextData {
   const context = useContext(ToastContext)
-
-  if (!context) {
-    throw new Error('useToast must be used within a ToastProvider')
-  }
 
   return context
 }
